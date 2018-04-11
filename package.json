@@ -1,0 +1,36 @@
+{
+  "name": "errate",
+  "version": "1.0.0",
+  "description": "Converts a value into an Error of the specified type.",
+  "keywords": [
+    "convert",
+    "error"
+  ],
+  "author": "John Lamansky",
+  "license": "MIT",
+  "homepage": "https://github.com/lamansky/errate",
+  "repository": "lamansky/errate",
+  "main": "index.js",
+  "files": [],
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "dependencies": {
+    "copy-own": "^1.1.0",
+    "is-class-of": "^1.0.1",
+    "is-instance-of": "^1.0.1"
+  },
+  "devDependencies": {
+    "eslint-config-lamansky": "^1.0.0",
+    "mocha": "^5.0.5"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "eslintConfig": {
+    "extends": "lamansky",
+    "env": {
+      "mocha": true
+    }
+  }
+}
