@@ -4,7 +4,7 @@ const copyOwn = require('copy-own')
 const isClassOf = require('is-class-of')
 const is = require('is-instance-of')
 
-module.exports = function errate (e, Cls = Error) {
+module.exports = function errate (e, Cls = Error, {forceClass = true} = {}) {
   if (arguments.length === 1 && isClassOf(e, 'Error')) {
     Cls = e
     e = null
@@ -13,6 +13,6 @@ module.exports = function errate (e, Cls = Error) {
   }
   if (!e) return new Cls()
   if (is(e, Cls)) return e
-  if (is(e, 'Error')) return copyOwn(e, new Cls())
+  if (is(e, 'Error')) return forceClass ? copyOwn(e, new Cls()) : e
   return new Cls(e)
 }

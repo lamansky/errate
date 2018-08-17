@@ -41,10 +41,15 @@ describe('errate()', function () {
     assert.strictEqual(errate(err), err)
   })
 
-  it('should convert an Error into the specified type', function () {
+  it('should convert to the specified class, unless `forceClass` is `false`', function () {
     const errMsg = 'Test'
-    const err = errate(new Error(errMsg), TypeError)
-    assert.strictEqual(err.constructor, TypeError)
+    const typeErr = errate(new Error(errMsg), TypeError)
+    assert.strictEqual(typeErr.constructor, TypeError)
+    assert.strictEqual(typeErr.message, errMsg)
+
+    const err = errate(new Error(errMsg), TypeError, {forceClass: false})
+    assert.strictEqual(err.constructor, Error)
+    assert.notStrictEqual(err.constructor, TypeError)
     assert.strictEqual(err.message, errMsg)
   })
 })

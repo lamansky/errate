@@ -18,6 +18,8 @@ The module exports a single function.
 
 1. Optional: `e` (string or Error object): The error message, or an existing Error object.
 2. Optional: `Cls` (Error class): The desired class of the returned Error (such as `TypeError` or `RangeError`). Defaults to `Error`.
+3. Optional: Object argument:
+    * `forceClass` (boolean): If set to `true`, instances of other `Error` classes will be converted to instances of `Cls`. If set to `false`, `Cls` will only be used to wrap string errors. Defaults to `true`.
 
 ### Return Value
 
