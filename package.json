@@ -18,13 +18,13 @@
     "node": ">=6.0.0"
   },
   "dependencies": {
-    "copy-own": "^1.1.0",
+    "copy-own": "^1.2.0",
     "is-class-of": "^1.0.1",
-    "is-instance-of": "^1.0.1"
+    "is-instance-of": "^1.0.2"
   },
   "devDependencies": {
-    "eslint-config-lamansky": "^1.0.0",
-    "mocha": "^5.2.0"
+    "eslint-config-lamansky": "^2.0.0",
+    "mocha": "^6.2.1"
   },
   "scripts": {
     "test": "mocha"
