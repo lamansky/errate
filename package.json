@@ -20,7 +20,8 @@
   "dependencies": {
     "copy-own": "^1.2.0",
     "is-class-of": "^1.0.1",
-    "is-instance-of": "^1.0.2"
+    "is-instance-of": "^1.0.2",
+    "trim-call": "^1.1.0"
   },
   "devDependencies": {
     "eslint-config-lamansky": "^2.0.0",

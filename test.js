@@ -52,4 +52,24 @@ describe('errate()', function () {
     assert.notStrictEqual(err.constructor, TypeError)
     assert.strictEqual(err.message, errMsg)
   })
+
+  it('should use `defaultMessage` when creating an Error', function () {
+    const defaultMessage = 'Something happened'
+    const err = errate(null, TypeError, {defaultMessage})
+    assert.strictEqual(err.constructor, TypeError)
+    assert.strictEqual(err.message, defaultMessage)
+  })
+
+  it('should pass no arguments to Error constructor if no `defaultMessage`', function () {
+    class CustomError extends Error {
+      constructor () {
+        assert.strictEqual(arguments.length, 0)
+        super(...arguments)
+        this.didRun = true
+      }
+    }
+    const err = errate(null, CustomError)
+    assert.strictEqual(err.constructor, CustomError)
+    assert.strictEqual(err.didRun, true)
+  })
 })
